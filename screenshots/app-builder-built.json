@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "SM Marketing | Innovative Software House for Business Growth",
+      "hasCanvas": false,
+      "bodyTextLen": 5768,
+      "bodyTextHash": "e19836220aeacecf3ed15d567cab4405cb499f3b489f71dda1272bb2c5ae2604",
+      "bodyTextPrefix": "SM Marketing SOFTWARE · DESIGN · GROWTH Home About Services Port",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "SM Marketing | Innovative Software House for Business Growth",
+      "hasCanvas": false,
+      "bodyTextLen": 5829,
+      "bodyTextHash": "957d33cfbcb560d0ba23eef0bdd73cb32d594f22ff180b6a85e07fbadd5a43f8",
+      "bodyTextPrefix": "SM Marketing Menu Home About Services Portfolio Contact Office N",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
