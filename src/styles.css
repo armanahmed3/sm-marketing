@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #05070c;
+  --color-surface: #0c1018;
+  --color-elevated: #141922;
+  --color-fg: #eceef2;
+  --color-muted: #9aa3b2;
+  --color-faint: #6d7584;
+  --color-primary: #12c48a;
+  --color-primary-fg: #042016;
+  --color-danger: #f07167;
+
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bebas Neue", "Montserrat", sans-serif;
+
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
+  --shadow-ring: 0 0 0 1px rgb(255 255 255 / 0.08);
+  --shadow-ring-hover: 0 0 0 1px rgb(255 255 255 / 0.14);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    line-height: 1.55;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--color-fg);
+    color: var(--color-bg);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img {
+    outline: 1px solid rgb(255 255 255 / 0.08);
+    outline-offset: -1px;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.03em;
+    font-weight: 400;
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  .shadow-ring {
+    box-shadow: var(--shadow-ring);
+  }
+
+  .marquee-track {
+    animation: marquee 32s linear infinite;
+  }
+
+  .stagger-in > * {
+    animation: rise 0.7s var(--ease-out-soft) both;
+  }
+  .stagger-in > *:nth-child(1) {
+    animation-delay: 40ms;
+  }
+  .stagger-in > *:nth-child(2) {
+    animation-delay: 120ms;
+  }
+  .stagger-in > *:nth-child(3) {
+    animation-delay: 200ms;
+  }
+  .stagger-in > *:nth-child(4) {
+    animation-delay: 280ms;
+  }
+  .stagger-in > *:nth-child(5) {
+    animation-delay: 360ms;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track,
+  .stagger-in > * {
+    animation: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
